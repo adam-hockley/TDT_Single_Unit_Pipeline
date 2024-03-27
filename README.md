@@ -9,8 +9,8 @@ N.B. This an adaptation of TDTs own [StreamToBinary](https://www.tdt.com/docs/sd
 
 _Then sort using SpikeInterface or Kilosort etc and export to Phy format for viewing & manual curation._
 
-## 2) Phy2bst.m converts the sorter output (in Phy format) to bst format.
-This step turns the output from the spike sorter back to a format where spike times are associated with stimuli presented during TDT recordings. Data are saved into a bst format that is similar in structure to a TDT block recording, but has 
+## 2) Phy2bst.m converts the sorter output to bst format.
+This step turns the output from the spike sorter (in Phy format) back to a format where spike times are associated with stimuli presented during TDT recordings. Data are saved into bst format, which is similar in structure to a TDT block recording but has custom functions associated with it that allow easy access to spike times by querying stimulus parameters.
 
 ## 3) Using custom functions to easily access data form bst data format
 ### BST_GS
