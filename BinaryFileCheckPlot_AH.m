@@ -1,4 +1,4 @@
-% Loads in a binary file and checks data 
+% Loads in a binary file (created by StreamToBinary_AH.m) and checks the data by plotting some streams 
 % AH 02/2023
 % 
 nChan = 32; % has to be correct because binary file data is interleaved.
