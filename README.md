@@ -29,5 +29,5 @@ Outputs the stimulus trial numbers corresponding to requested stimulus parameter
 `Trials = BST_TS(bst,'Lev1',10,'Frq1',[1000 2000])`
 
 ### BST_GS
-Outputs the spike timings that occurred within the queried trials. e.g. to find spike time during the trials from above:
-`SpikeTimes = BST_GS(bst,'Lev1',10,'Frq1',[1000 2000])`
+Outputs the spike timings that occurred within the queried trials. e.g. to find spike times for neuron 1 during the trials from above:
+`SpikeTimes =  BST_GS3(bst,SelectedTrials,1))`
