@@ -13,7 +13,7 @@
 tic
 %% All variables to change in here
 close all; clear all; clc;
-TANKPATH = '\\anlserver.der.usal.es\Shared\Researchers\Para Adam\Tanks\TestTank';
+TANKPATH = 'Tank\Path\Here';
 
 %% Get electrode positions
 
