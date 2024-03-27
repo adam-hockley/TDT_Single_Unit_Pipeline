@@ -2,7 +2,7 @@
 % AH 02/2023
 % 
 nChan = 32; % has to be correct because binary file data is interleaved.
-fid = fopen('\\anlserver.der.usal.es\Shared\Researchers\Para Adam\Tanks\TestTank\1\1.bin','r');
+fid = fopen('binaryfilelocation\1.bin','r');
 dat = fread(fid,[nChan inf],'*int16');
 fclose(fid);
 % plot(dat(:,1:50000)'+(1:size(dat,1))*1000);
@@ -21,7 +21,7 @@ for i = 1:length(dat(:,1)) % Only plotting channel 1 at the moment
 
 end
 
-% exportgraphics(gcf,'X:\Researchers\Para Adam\stream_forDavid.eps')% x = imresize(x,0.4811161);
+% exportgraphics(gcf,'SaveLoc.eps')% x = imresize(x,0.4811161);
 % close all
 
 %%    
@@ -44,6 +44,4 @@ plotdatmu = filtfilt(b,1,plotdat);
 timevector = (1:length(plotdatmu))/fs;
 plot(timevector,(plotdatmu/10000),'k','linewidth',2)
 
-% exportgraphics(gcf,'X:\Researchers\Para Adam\stream_forDavid.eps')% x = imresize(x,0.4811161);
-% close all
     
