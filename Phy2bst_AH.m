@@ -108,7 +108,7 @@ for ta = 1:length(tanks)
                         SpikesStacked = [SpikesStacked; tempSpikes]; %stackem
                     end
 
-                    if i>1 % New add - not sure
+                    if i>1 %
                         SpikesStacked(:,1) = SpikesStacked(:,1) - StreamSplitInfo.LengthSamps(i-1);
                     end
 
@@ -124,10 +124,6 @@ for ta = 1:length(tanks)
                     bst.Spikes.RasterSW = bst.Spikes.TS - bst.Epocs.TSOn.wfrq(bst.Spikes.TrialIdx);
 
                     bst.SpikeShapes = SpikeShapesNew;
-
-                    if contains(StreamSplitInfo.Blocks{i},'Stim')
-                        bst = BST_AddType(bst);
-                    end
 
                     save([tank_path '\' StreamSplitInfo.Blocks{i} '\bst_' Sorter '.mat'],'bst')
                     disp(['Block: ' StreamSplitInfo.Blocks{i} '. Unit ' num2str(units(ii)) ' saved. ' num2str(height(bst.Spikes)) ' spikes.'])
