@@ -13,7 +13,7 @@ This combines any TDT blocks that were recorded on the same neurons, to allow th
 
 In order for looping to work, data folders should be organised as: **AnimalTank/PositionNumber/Blocks**.
 
-N.B. This an adaptation of TDTs own [StreamToBinary](https://www.tdt.com/docs/sdk/offline-data-analysis/offline-data-matlab/export-continuous-data-to-binary-file/) the updates made make increase stability for large files and allow appending multiple recording blocks into one binary file. 
+Note: This an adaptation of TDTs own [StreamToBinary](https://www.tdt.com/docs/sdk/offline-data-analysis/offline-data-matlab/export-continuous-data-to-binary-file/) the updates made make increase stability for large files and allow appending multiple recording blocks into one binary file. 
 
 Requires TDTBin2Mat from the [TDT Matlab SDK](https://www.tdt.com/docs/sdk/offline-data-analysis/offline-data-matlab/).
 
