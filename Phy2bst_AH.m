@@ -9,12 +9,8 @@
 % by which TDT block they were part of.
 % Step 2 - Convert Phy spike data to bst format, to make it comparable to
 % TDT stimuli.
-% Step 3 - use BST_AddType to add oddball, deviant etc tags to bst stimuli
 %
 % AH 02/2023
-
-%% NOTE -  BST_AddType should be manually checked by each user to confirm it is correctly labelling deviants etc. 
-%
 
 clear
 clc
