@@ -1,4 +1,4 @@
-# Adam Hockley's TDT analysis pipeline
+# TDT analysis pipeline by Adam Hockley
 A selection of tools in MATLAB for analysing multi-channel single neuron data recorded using TDT systems. 
 
 To-do list:
