@@ -9,7 +9,9 @@ To-do list:
 The analysis pipeline involves the following steps:
 
 ## 1) StreamToBinary_AH.m converts TDT stream data to an i16 binary file. 
-This combines any TDT blocks that were recorded on the same neurons, to allow them to be sorted together. The resulting binary file can be easily input to sorting programs.  
+This combines any TDT blocks that were recorded on the same neurons, to allow them to be sorted together. The resulting binary file can be easily input to sorting programs. 
+
+In order for looping to work, data folders should be organised as: **AnimalTank/RecordingNumber/Blocks**.
 
 N.B. This an adaptation of TDTs own [StreamToBinary](https://www.tdt.com/docs/sdk/offline-data-analysis/offline-data-matlab/export-continuous-data-to-binary-file/) the updates made make increase stability for large files and allow appending multiple recording blocks into one binary file. 
 
