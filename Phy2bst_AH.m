@@ -19,7 +19,7 @@
 clear
 clc
 
-Main_path = '\\anlserver.der.usal.es\Shared\Researchers\Para Adam\Tanks\';
+Main_path = 'Tank\Path\Here';
 tanks = {'TestTank'};
 Sorter = 'SC2';
 
