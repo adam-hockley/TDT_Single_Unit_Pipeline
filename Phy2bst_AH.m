@@ -41,17 +41,11 @@ for ta = 1:length(tanks)
                 PhyRez(:,2) = readNPY([tank_path '\Sorting\' Sorter '\Phy\spike_clusters.npy']);
                 PhyRez(:,2) = PhyRez(:,2)+1; % Remove Phy zero-indexing
 
-                % Reading similarity matrix
-                SimMat = readNPY([tank_path '\Sorting\' Sorter '\Phy\similar_templates.npy']);
-
-                %%
-                [PhyRezNew, merged] = ClusterMerging(SimMat,PhyRez);
-
                 %% Cluster locations (greatest amplitude spike)
                 SpikeShapes = readNPY([tank_path '\Sorting\' Sorter '\Phy\templates.npy']); % Spike shapes
                 templateindexes = readNPY([tank_path '\Sorting\' Sorter '\Phy\template_ind.npy']); % Spike shapes
                 clear bestchannel amp SpikeShapesNew
-                newclusters = unique(PhyRezNew(:,2));
+                newclusters = unique(PhyRez(:,2));
 
                 for i = 1:length(newclusters) % For each cluster
                     for ii = 1:length(SpikeShapes(1,1,:)) % For each channel
@@ -69,8 +63,6 @@ for ta = 1:length(tanks)
 
                 %% Separate spikes by which block they were recorded in
 
-                Spikes_all = PhyRezNew; % Data from Phy
-
                 Ends = cumsum(StreamSplitInfo.LengthSamps); % Get end of block windows
                 Start = 1; % Setting initial start sample
                 for i = 1:length(StreamSplitInfo.Blocks)
@@ -80,8 +72,8 @@ for ta = 1:length(tanks)
                     blockWindow = [Start Ends(i)]; % Get first and last samples of this block
                     Start = Ends(i) + 1; % Setting start sample for next block
 
-                    idx = find(Spikes_all(:,1) >= blockWindow(1) & Spikes_all(:,1) <= blockWindow(2));
-                    Spikes_blockSeparated{i} = Spikes_all(idx,:);
+                    idx = find(PhyRez(:,1) >= blockWindow(1) & PhyRez(:,1) <= blockWindow(2));
+                    Spikes_blockSeparated{i} = PhyRez(idx,:);
 
                 end
 
@@ -91,7 +83,7 @@ for ta = 1:length(tanks)
                     % Load BST
                     [bst,~,~] = bbst3(tank_path,StreamSplitInfo.Blocks{i},0); % Load bst (only epochs
 
-                    units = unique(Spikes_all(:,2)); % get list of unit numbers from sorted data
+                    units = unique(PhyRez(:,2)); % get list of unit numbers from sorted data
 
                     bst.Spikes = table;
                     SpikesStacked = [];
@@ -127,4 +119,14 @@ for ta = 1:length(tanks)
             end
         end
     end
+end
+
+%%
+function folders = allfolders(directory)
+
+folders = dir(directory);
+dirFlags = [folders.isdir] & ~strcmp({folders.name},'.') & ~strcmp({folders.name},'..');
+folders = folders(dirFlags);
+folders = {folders.name};
+
 end
