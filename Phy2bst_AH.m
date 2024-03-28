@@ -15,7 +15,7 @@
 clear
 clc
 
-Main_path = 'Tank\Path\Here';
+Main_path = 'X:\Researchers\Para Adam\Tanks\';
 tanks = {'TestTank'};
 Sorter = 'SC2';
 
@@ -105,11 +105,11 @@ for ta = 1:length(tanks)
                     bst.Spikes.chan = SpikesStacked(:,2); % fs hard coded here
 
                     % Calculate Trial Index & raster
-                    swepoff = bst.Epocs.TSOff.wfrq;
-                    [~,~,bins] = histcounts(bst.Spikes.TS,[bst.Epocs.TSOn.wfrq; swepoff(end)]);
+                    swepoff = bst.Epocs.TSOff.bind;
+                    [~,~,bins] = histcounts(bst.Spikes.TS,[bst.Epocs.TSOn.bind; swepoff(end)]);
                     bst.Spikes.TrialIdx = bins;
                     bst.Spikes.TrialIdx(bst.Spikes.TrialIdx==0) = 1;
-                    bst.Spikes.RasterSW = bst.Spikes.TS - bst.Epocs.TSOn.wfrq(bst.Spikes.TrialIdx);
+                    bst.Spikes.RasterSW = bst.Spikes.TS - bst.Epocs.TSOn.bind(bst.Spikes.TrialIdx);
 
                     bst.SpikeShapes = SpikeShapesNew;
 

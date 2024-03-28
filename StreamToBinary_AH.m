@@ -13,7 +13,7 @@
 tic
 %% All variables to change in here
 close all; clear all; clc;
-TANKPATH = 'Tank\Path\Here';
+TANKPATH = 'X:\Researchers\Para Adam\Tanks\NPH3';
 
 %% Get electrode positions
 
@@ -26,7 +26,7 @@ for pos = 1:length(Positions)
     SAVEPATH = DATAPATH;
     OutFileName = num2str(Positions{pos});
 
-    Positions = allfolders(DATAPATH);
+    Blocks = allfolders(DATAPATH);
 
     % Set the variables for the data you want to extract from all blocks
     FORMAT = 'i16'; % i16 = 16-bit integer, f32 = 32-bit floating point
@@ -40,7 +40,6 @@ for pos = 1:length(Positions)
 
         % Set variables for blocks to append (2,3,4 etc)
         BLOCKPATH = fullfile(DATAPATH,Blocks{i});
-%         data = TDTbin2mat(BLOCKPATH, 'TYPE', {'streams'}, 'T2', 1); % read the first second of data to get the channel coun
         data = TDTbin2mat(BLOCKPATH, 'TYPE', [4], 'T2', 1); % read the first second of data to get the channel coun
 
         store = fields(data.streams);
@@ -64,9 +63,6 @@ for pos = 1:length(Positions)
 
         data = TDTbin2mat(BLOCKPATH, 'STORE', store, 'T1', T1, 'T2', T2);
 
-        % Only use first 32ch for NPH9
-%         data.streams.SU_2.data = data.streams.SU_2.data(1:32,:);
-
         % loop through data in 10 second increments
         while T1<nsecs
             if strcmpi(FORMAT, 'i16')
@@ -80,9 +76,6 @@ for pos = 1:length(Positions)
             T1 = T2;
             T2 = T2 + TIME_DELTA;
             data = TDTbin2mat(BLOCKPATH, 'STORE', store, 'T1', T1, 'T2', T2);
-
-            % Only use first 32ch for NPH9
-%             data.streams.SU_2.data = data.streams.SU_2.data(1:32,:);
         
         end
         fprintf('Wrote %s to output file %s\n', thisStore, OUTFILE);
@@ -91,7 +84,6 @@ for pos = 1:length(Positions)
         fclose(fid);
     end
     if i > 1 
-%         save(string([SAVEPATH '\StreamSplitInfo_' OutFileName '.mat']),'StreamSplitInfo')
         save(string([SAVEPATH '\StreamSplitInfo_All.mat']),'StreamSplitInfo')
     end
 
