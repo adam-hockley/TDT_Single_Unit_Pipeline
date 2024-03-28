@@ -16,8 +16,8 @@ clear
 clc
 
 Main_path = 'X:\Researchers\Para Adam\Tanks\';
-tanks = {'TestTank'};
-Sorter = 'SC2';
+tanks = {'NPH3','NPH4','NPH5','NPH6','NPH8','NPH9','NPH10'};
+Sorter = 'MS5';
 
 %%
 for ta = 1:length(tanks)
@@ -114,7 +114,7 @@ for ta = 1:length(tanks)
                     bst.SpikeShapes = SpikeShapesNew;
 
                     save([tank_path '\' StreamSplitInfo.Blocks{i} '\bst_' Sorter '.mat'],'bst')
-                    disp(['Block: ' StreamSplitInfo.Blocks{i} '. Unit ' num2str(units(ii)) ' saved. ' num2str(height(bst.Spikes)) ' spikes.'])
+                    disp(['Block: ' StreamSplitInfo.Blocks{i} '. Units:' num2str(units(ii)) '. Spikes:' num2str(height(bst.Spikes)) '. Saved.'])
                 end
             end
         end

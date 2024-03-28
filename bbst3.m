@@ -18,6 +18,10 @@ else
     TDTbin = TDTbin2mat([tank_path '\' block],'Type',[2]);
 end
 
+if ~isfield(TDTbin.epocs,'Wfrq')
+    error('TDT recording does not contain an epoc called Wfrq. Change code to look for a different TDT epoc name that begins at the start of each sweep')
+end
+
 if ~isempty(TDTbin.snips)
 
     spike_var = fieldnames(TDTbin.snips);
@@ -69,7 +73,7 @@ end
 
 %     epochs = TDT2mat(tank_path,['Block-' num2str(block_list(bl))],'Type',[2],'Verbose',0); % Load epochs
 fns = fieldnames(TDTbin.epocs);
-nsweps = length(TDTbin.epocs.bind.data);
+nsweps = length(TDTbin.epocs.Wfrq.data);
 bst.EpocNames{1} = 'bind';
 for ie = 1:length(fns)
     bst.EpocNames{end+1,1} = lower(fns{ie});
@@ -94,7 +98,7 @@ end
 
 % Add TSOn values to table
 bst.Epocs.TSOn.Block(h+1:h+nsweps) = {block};
-bst.Epocs.TSOn.bind(h+1:h+nsweps) = TDTbin.epocs.bind.onset(1:nsweps); % 2 to end?
+bst.Epocs.TSOn.bind(h+1:h+nsweps) = TDTbin.epocs.Wfrq.onset(1:nsweps); % 2 to end?
 for fi = 1:length(fns)
     tempdata = TDTbin.epocs.(fns{fi}).onset;
     bst.Epocs.TSOn.(lower(fns{fi}))(h+1:h+length(tempdata)) = tempdata;
@@ -102,7 +106,7 @@ end
 
 % Add TSoff values to table
 bst.Epocs.TSOff.Block(h+1:h+nsweps) = {block};
-bst.Epocs.TSOff.bind(h+1:h+nsweps) = TDTbin.epocs.bind.offset(1:nsweps); % 2 to end?
+bst.Epocs.TSOff.bind(h+1:h+nsweps) = TDTbin.epocs.Wfrq.offset(1:nsweps); % 2 to end?
 for fi = 1:length(fns)
     tempdata = TDTbin.epocs.(fns{fi}).offset;
     bst.Epocs.TSOff.(lower(fns{fi}))(h+1:h+length(tempdata)) = tempdata;
