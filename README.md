@@ -1,7 +1,7 @@
 # TDT single unit analysis pipeline
 A selection of tools in MATLAB for analysing multi-channel single neuron data recorded using TDT systems. 
 
-The analysis pipeline involves the following steps:
+The analysis pipeline involves preparing the TDT tank data for sorting, and then re-associating sorted spike data with sitmuli presented during recording. The output is in a proprietary bst format, which is similar to a TDT tank and has custom functions for easy further analysis.
 
 ## 1) StreamToBinary_AH.m converts TDT stream data to an i16 binary file. 
 This combines any TDT blocks that were recorded on the same neurons, to allow them to be sorted together. The resulting binary file can be easily input to sorting programs. 
