@@ -19,7 +19,7 @@ _Then spike sort using SpikeInterface or Kilosort etc and export to Phy format f
 ## 2) Phy2bst.m converts the sorter output to bst format.
 This step turns the output from the spike sorter (in Phy format) back to a format where spike times are associated with stimuli presented during TDT recordings. Data are saved into bst format, as bst.mat in the PositionNumber folder. bst format which is similar in structure to a TDT block recording and has custom functions associated with it that allow easy access to spike times by querying stimulus parameters.
 
-Requires [npy-matlab](https://github.com/kwikteam/npy-matlab/tree/master).
+Requires TDTBin2Mat from the [TDT Matlab SDK](https://www.tdt.com/docs/sdk/offline-data-analysis/offline-data-matlab/), [npy-matlab](https://github.com/kwikteam/npy-matlab/tree/master) & bbst3.m.
 
 ## 3) Using custom functions to easily access data from bst data format
 ### BST_TS 
