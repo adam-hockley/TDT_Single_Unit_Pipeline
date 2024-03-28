@@ -17,7 +17,7 @@ BinaryFileCheckPlot.m can be used to load the binary file and plot to confirm it
 _Then spike sort using SpikeInterface or Kilosort etc and export to Phy format for viewing & manual curation._
 
 ## 2) Phy2bst.m converts the sorter output to bst format.
-This step turns the output from the spike sorter (in Phy format) back to a format where spike times are associated with stimuli presented during TDT recordings. Data are saved into bst format, which is similar in structure to a TDT block recording but has custom functions associated with it that allow easy access to spike times by querying stimulus parameters.
+This step turns the output from the spike sorter (in Phy format) back to a format where spike times are associated with stimuli presented during TDT recordings. Data are saved into bst format, as bst.mat in the PositionNumber folder. bst format which is similar in structure to a TDT block recording but has custom functions associated with it that allow easy access to spike times by querying stimulus parameters.
 
 Requires [npy-matlab](https://github.com/kwikteam/npy-matlab/tree/master).
 
@@ -32,4 +32,5 @@ Outputs the spike timings that occurred within the queried trials. e.g. to find 
 `SpikeTimes =  BST_GS3(bst,Trials,1))`
 
 To-do list:
+- [ ] Change channel variables to neuron number (post sorting)
 - [ ] Automate the bind epoch picker
