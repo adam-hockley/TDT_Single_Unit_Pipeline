@@ -22,6 +22,8 @@ This step turns the output from the spike sorter (in Phy format) back to a forma
 Requires TDTBin2Mat from the [TDT Matlab SDK](https://www.tdt.com/docs/sdk/offline-data-analysis/offline-data-matlab/), [npy-matlab](https://github.com/kwikteam/npy-matlab/tree/master) & bbst3.m.
 
 ## 3) Using custom functions to easily access spike data from bst.
+The following two functions provide a simple method for querying spike times from the bst formatted data.
+
 ### BST_TS3.m
 Outputs the stimulus trial numbers corresponding to requested stimulus parameters. e.g. to find stimuli of 10 level and 1 or 2 kHz:
 
@@ -29,6 +31,7 @@ Outputs the stimulus trial numbers corresponding to requested stimulus parameter
 
 ### BST_GS3.m
 Outputs the spike timings that occurred within the queried trials. e.g. to find spike times for neuron 1 during the trials from above:
+
 `SpikeTimes =  BST_GS3(bst,Trials,1))`
 
 To-do list:
