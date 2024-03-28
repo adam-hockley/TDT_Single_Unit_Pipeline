@@ -32,4 +32,4 @@ Outputs the spike timings that occurred within the queried trials. e.g. to find 
 `SpikeTimes =  BST_GS3(bst,SelectedTrials,1))`
 
 To-do list:
-- [ ] 
+- [ ] Automate the bind epoch picker
