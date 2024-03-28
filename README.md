@@ -12,6 +12,8 @@ Note: This an adaptation of TDTs own [StreamToBinary](https://www.tdt.com/docs/s
 
 Requires TDTBin2Mat from the [TDT Matlab SDK](https://www.tdt.com/docs/sdk/offline-data-analysis/offline-data-matlab/).
 
+BinaryFileCheckPlot.m can be used to load the binary file and plot to confirm it was produced correctly.
+
 _Then spike sort using SpikeInterface or Kilosort etc and export to Phy format for viewing & manual curation._
 
 ## 2) Phy2bst.m converts the sorter output to bst format.
