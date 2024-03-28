@@ -15,6 +15,7 @@ Requires TDTBin2Mat from the [TDT Matlab SDK](https://www.tdt.com/docs/sdk/offli
 BinaryFileCheckPlot.m can be used to load the binary file and plot to confirm it was produced correctly before sorting.
 
 _Then spike sort using SpikeInterface or Kilosort etc and export to Phy format for viewing & manual curation._
+_Spike sorter output should be saved in **AnimalTank/Sorting/SorterAlgorithm/Phy/spike_times.npy**_
 
 ## 2) Phy2bst.m converts the sorter output to bst format.
 This step turns the output from the spike sorter (in Phy format) back to a format where spike times are associated with stimuli presented during TDT recordings. Data are saved into bst format, as bst.mat in the PositionNumber folder. bst format which is similar in structure to a TDT block recording and has custom functions associated with it that allow easy access to spike times by querying stimulus parameters.
