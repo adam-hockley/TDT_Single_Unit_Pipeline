@@ -29,7 +29,7 @@ Outputs the stimulus trial numbers corresponding to requested stimulus parameter
 
 ### BST_GS
 Outputs the spike timings that occurred within the queried trials. e.g. to find spike times for neuron 1 during the trials from above:
-`SpikeTimes =  BST_GS3(bst,SelectedTrials,1))`
+`SpikeTimes =  BST_GS3(bst,Trials,1))`
 
 To-do list:
 - [ ] Automate the bind epoch picker
