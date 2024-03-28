@@ -23,11 +23,11 @@ Requires [npy-matlab](https://github.com/kwikteam/npy-matlab/tree/master).
 ### BST_TS 
 Outputs the stimulus trial numbers corresponding to requested stimulus parameters. e.g. to find stimuli of 10 level and 1 or 2 kHz:
 
-To-do list:
-- [ ] 
-
 `Trials = BST_TS(bst,'Lev1',10,'Frq1',[1000 2000])`
 
 ### BST_GS
 Outputs the spike timings that occurred within the queried trials. e.g. to find spike times for neuron 1 during the trials from above:
 `SpikeTimes =  BST_GS3(bst,SelectedTrials,1))`
+
+To-do list:
+- [ ] 
