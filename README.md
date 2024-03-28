@@ -1,10 +1,5 @@
-# TDT single unit analysis pipeline by Adam Hockley
+# TDT single unit analysis pipeline
 A selection of tools in MATLAB for analysing multi-channel single neuron data recorded using TDT systems. 
-
-To-do list:
-- [ ] Check all required functions are also in the repository
-- [ ] Check bst function examples
-- [ ] Check bst Wfrq is not hard coded throughout, maybe could use a different trial idx. Especially in bbst3
 
 The analysis pipeline involves the following steps:
 
@@ -27,6 +22,9 @@ Requires [npy-matlab](https://github.com/kwikteam/npy-matlab/tree/master).
 ## 3) Using custom functions to easily access data from bst data format
 ### BST_TS 
 Outputs the stimulus trial numbers corresponding to requested stimulus parameters. e.g. to find stimuli of 10 level and 1 or 2 kHz:
+
+To-do list:
+- [ ] 
 
 `Trials = BST_TS(bst,'Lev1',10,'Frq1',[1000 2000])`
 
