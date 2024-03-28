@@ -21,7 +21,7 @@ This step turns the output from the spike sorter (in Phy format) back to a forma
 
 Requires TDTBin2Mat from the [TDT Matlab SDK](https://www.tdt.com/docs/sdk/offline-data-analysis/offline-data-matlab/), [npy-matlab](https://github.com/kwikteam/npy-matlab/tree/master) & bbst3.m.
 
-## 3) Using custom functions to easily access data from bst data format
+## 3) Using custom functions to easily access spike data from bst.
 ### BST_TS3.m
 Outputs the stimulus trial numbers corresponding to requested stimulus parameters. e.g. to find stimuli of 10 level and 1 or 2 kHz:
 
