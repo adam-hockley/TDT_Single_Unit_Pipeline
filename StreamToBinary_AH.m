@@ -26,10 +26,7 @@ for pos = 1:length(Positions)
     SAVEPATH = DATAPATH;
     OutFileName = num2str(Positions{pos});
 
-   Positions = allfolders(DATAPATH);
-    
-    % Or set blocks manually
-%     Blocks = {'3-1-FRA'};
+    Positions = allfolders(DATAPATH);
 
     % Set the variables for the data you want to extract from all blocks
     FORMAT = 'i16'; % i16 = 16-bit integer, f32 = 32-bit floating point
@@ -100,3 +97,13 @@ for pos = 1:length(Positions)
 
 end
 toc
+
+%%
+function folders = allfolders(directory)
+
+folders = dir(directory);
+dirFlags = [folders.isdir] & ~strcmp({folders.name},'.') & ~strcmp({folders.name},'..');
+folders = folders(dirFlags);
+folders = {folders.name};
+
+end
