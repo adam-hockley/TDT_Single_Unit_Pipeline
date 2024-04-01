@@ -17,7 +17,7 @@ clc
 
 Main_path = 'X:\Researchers\Para Adam\Tanks\';
 tanks = {'NPH3','NPH4','NPH5','NPH6','NPH8','NPH9','NPH10'};
-Sorter = 'TDC2';
+Sorter = 'KS4';
 
 %%
 for ta = 1:length(tanks)
