@@ -112,7 +112,7 @@ for ta = 1:length(tanks)
                         end
 
                         bst.Spikes.Sample = SpikesStacked(:,1);
-                        bst.Spikes.TS = SpikesStacked(:,1) / 24414; % fs hard coded here (actually 24414 as spikeinterface removes the decimal). True sample rate is 24414.0625
+                        bst.Spikes.TS = SpikesStacked(:,1) / 24414.0625; % fs hard coded here
                         bst.Spikes.unit = SpikesStacked(:,2); % fs hard coded here
 
                         % Calculate Trial Index & raster
