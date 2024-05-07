@@ -1,5 +1,5 @@
 # TDT single unit analysis pipeline
-v1.0.0
+v1.0
 A selection of tools in MATLAB for analysing multi-channel single neuron data recorded using TDT systems. 
 
 The analysis pipeline involves preparing the TDT tank data for sorting, and then re-associating sorted spike data with sitmuli presented during recording. The output is in a proprietary 'bst' format, which is similar to a TDT tank and has custom functions for easy further analysis.
