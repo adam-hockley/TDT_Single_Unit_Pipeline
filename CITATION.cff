@@ -11,5 +11,5 @@ authors:
   - given-names: Adam
     family-names: Hockley
     orcid: 'https://orcid.org/0000-0002-8014-6477'
-    url: "https://github.com/adam-hockley/TDT_Single_Unit_Pipeline"
-    version: 1.0.0
+url: "https://github.com/adam-hockley/TDT_Single_Unit_Pipeline"
+version: 1.0.0
